@@ -238,14 +238,25 @@ func MsgWechatmp(tplId string, data map[string]WechatmpData, pages ...string) *M
 	}
 }
 
-// MsgSms 短信消息
+// MsgSms 短信消息之极光消息
 func MsgSms(signId string, tempId int, params map[string]any) *MsgData {
 	return &MsgData{
 		"msg_sms": []map[string]any{
 			{
 				"sign_id":   signId,
-				"template_id":   tempId,
-				"template_para": params,
+				"temp_id":   tempId,
+				"temp_para": params,
+			},
+		},
+	}
+}
+
+// MsgSms 短信消息之极光消息
+func MsgCmppSms(content string) *MsgData {
+	return &MsgData{
+		"msg_sms": []map[string]any{
+			{
+				"content": content,
 			},
 		},
 	}
