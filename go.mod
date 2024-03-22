@@ -1,4 +1,4 @@
-module github.com/duxphp/go-jums
+module github.com/dudesun/go-jums
 
 go 1.18
 
