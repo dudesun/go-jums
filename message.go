@@ -33,6 +33,10 @@ func (u *Message) Send() error {
 	return Request("v1/sent", u.Key, u.Secret, u.Data)
 }
 
+func (u *Message) TemplateSend() error {
+	return Request("v1/template/sent", u.Key, u.Secret, u.Data)
+}
+
 // ToUser 用户id
 func ToUser(aud []string) *ToData {
 	return &ToData{
