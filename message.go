@@ -244,8 +244,8 @@ func MsgSms(signId string, tempId int, params map[string]any) *MsgData {
 		"msg_sms": []map[string]any{
 			{
 				"sign_id":   signId,
-				"temp_id":   tempId,
-				"temp_para": params,
+				"template_id":   tempId,
+				"template_para": params,
 			},
 		},
 	}
