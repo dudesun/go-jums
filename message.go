@@ -95,12 +95,12 @@ func ToWechatmp(instance string, aud []string) *ToData {
 }
 
 // ToOutBound 电话
-func ToSms(instance string, aud []string) *ToData {
+func ToOutBound(aud []string) *ToData {
 	return &ToData{
 		"aud_outbound": []map[string]any{
 			{
 				"type": "id",
-				"instance": instance,
+				"instance": "outbound",
 				"data":     aud,
 			},
 		},
@@ -108,12 +108,12 @@ func ToSms(instance string, aud []string) *ToData {
 }
 
 // ToSms 短信
-func ToSms(instance string, aud []string) *ToData {
+func ToSms(aud []string) *ToData {
 	return &ToData{
 		"aud_sms": []map[string]any{
 			{
 				"type": "id",
-				"instance": instance,
+				"instance": "sms",
 				"data":     aud,
 			},
 		},
@@ -121,12 +121,12 @@ func ToSms(instance string, aud []string) *ToData {
 }
 
 // ToEmail 邮件
-func ToEmail(instance string, aud []string) *ToData {
+func ToEmail(aud []string) *ToData {
 	return &ToData{
 		"aud_email": []map[string]any{
 			{
 				"type": "id",
-				"instance": instance,
+				"instance": "email",
 				"data":     aud,
 
 			},
