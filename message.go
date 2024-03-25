@@ -94,6 +94,19 @@ func ToWechatmp(instance string, aud []string) *ToData {
 	}
 }
 
+// ToOutBound 电话
+func ToSms(instance string, aud []string) *ToData {
+	return &ToData{
+		"aud_outbound": []map[string]any{
+			{
+				"type": "id",
+				"instance": instance,
+				"data":     aud,
+			},
+		},
+	}
+}
+
 // ToSms 短信
 func ToSms(instance string, aud []string) *ToData {
 	return &ToData{
@@ -273,6 +286,17 @@ func TemplateMsg(tempId int, params map[string]any) *MsgData {
 		}
 }
 
+// MsgOutBound 电话呼叫消息
+func MsgOutBound(content string) *MsgData {
+	return &MsgData{
+		"msg_outbound": []map[string]any{
+			{
+				"content": content,
+				"callType": 4,
+			},
+		},
+	}
+}
 
 // MsgEmail 邮件消息
 func MsgEmail(title string, content string, files ...[]string) *MsgData {
