@@ -99,6 +99,7 @@ func ToSms(instance string, aud []string) *ToData {
 	return &ToData{
 		"aud_sms": []map[string]any{
 			{
+				"type": "id",
 				"instance": instance,
 				"data":     aud,
 			},
@@ -111,8 +112,10 @@ func ToEmail(instance string, aud []string) *ToData {
 	return &ToData{
 		"aud_email": []map[string]any{
 			{
+				"type": "id",
 				"instance": instance,
 				"data":     aud,
+
 			},
 		},
 	}
