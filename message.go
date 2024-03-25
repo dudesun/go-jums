@@ -251,7 +251,7 @@ func MsgSms(signId string, tempId int, params map[string]any) *MsgData {
 	}
 }
 
-// MsgSms 短信消息之极光消息
+// MsgSms 短信消息之CMPP消息
 func MsgCmppSms(content string) *MsgData {
 	return &MsgData{
 		"msg_sms": []map[string]any{
@@ -261,6 +261,15 @@ func MsgCmppSms(content string) *MsgData {
 		},
 	}
 }
+
+// TemplateMsg 模版消息的template_id和template_para
+func TemplateMsg(tempId int, params map[string]any) *MsgData {
+	return &MsgData{
+			"template_id": tempId,
+			"template_para": params,
+		}
+}
+
 
 // MsgEmail 邮件消息
 func MsgEmail(title string, content string, files ...[]string) *MsgData {
