@@ -29,7 +29,6 @@ func New(config Config) *Jums {
 type Message struct {
 	Key      string
 	Secret   string
-	EndPoint string
 	Data   map[string]any
 }
 
