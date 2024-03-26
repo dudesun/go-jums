@@ -44,7 +44,7 @@ func (u *Users) Del(types ...*userType) *Users {
 
 // Send 发送消息内容
 func (u *Users) Send() error {
-	return Request("v1/sent/user/opt", u.Key, u.Secret, u.Data)
+	return Request("v1/sent/user/opt", u.EndPoint, u.Key, u.Secret, u.Data)
 }
 
 type userType map[string]any
