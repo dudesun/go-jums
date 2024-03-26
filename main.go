@@ -69,7 +69,7 @@ func (u *Jums) UserDel(userid ...uint) error {
 	if len(userid) == 0 {
 		return errors.New("删除用户为空")
 	}
-	return Request("v1/user/delete", u.EndPoint, u.config.AccountKey, u.config.AccountSecret, userid)
+	return Request("v1/user/delete", u.config.EndPoint, u.config.AccountKey, u.config.AccountSecret, userid)
 }
 
 // Request 请求数据
