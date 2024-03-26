@@ -13,6 +13,7 @@ type Jums struct {
 type Config struct {
 	Key           string
 	Secret        string
+	EndPoint      string
 	AccountKey    string
 	AccountSecret string
 }
@@ -26,8 +27,9 @@ func New(config Config) *Jums {
 
 // Message 普通消息推送
 type Message struct {
-	Key    string
-	Secret string
+	Key      string
+	Secret   string
+	EndPoint string
 	Data   map[string]any
 }
 
@@ -69,9 +71,9 @@ func (u *Jums) UserDel(userid ...uint) error {
 }
 
 // Request 请求数据
-func Request(url string, key string, secret string, data any) error {
+func Request(url string, endpoint string, key string, secret string, data any) error {
 	var err error
-	_, body, errs := fiber.Post("http://116.198.43.67/api/"+url).Debug().BasicAuth(key, secret).JSON(data).Bytes()
+	_, body, errs := fiber.Post(endpoint+url).Debug().BasicAuth(key, secret).JSON(data).Bytes()
 	if len(errs) > 0 {
 		return errs[0]
 	}
