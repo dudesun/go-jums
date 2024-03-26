@@ -29,14 +29,16 @@ func New(config Config) *Jums {
 type Message struct {
 	Key      string
 	Secret   string
+	EndPoint string
 	Data   map[string]any
 }
 
 // Message 消息模式
 func (u *Jums) Message() *Message {
 	return &Message{
-		Key:    u.config.Key,
-		Secret: u.config.Secret,
+		Key:      u.config.Key,
+		Secret:   u.config.Secret,
+		EndPoint: u.config.EndPoint,
 		Data:   map[string]any{},
 	}
 }
