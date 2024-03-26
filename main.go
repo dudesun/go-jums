@@ -57,6 +57,7 @@ func (u *Jums) User() *Users {
 	return &Users{
 		Key:           u.config.Key,
 		Secret:        u.config.Secret,
+		EndPoint:      u.config.EndPoint,
 		AccountKey:    u.config.AccountKey,
 		AccountSecret: u.config.AccountSecret,
 		Data:          map[string]any{},
