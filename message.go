@@ -30,11 +30,11 @@ func (u *Message) Content(datas ...*MsgData) *Message {
 
 // Send 发送消息内容
 func (u *Message) Send() error {
-	return Request("v1/sent", u.EndPoint, u.Key, u.Secret, u.Data)
+	return Request("v1/send", u.EndPoint, u.Key, u.Secret, u.Data)
 }
 
 func (u *Message) TemplateSend() error {
-	return Request("v1/template/sent", u.EndPoint, u.Key, u.Secret, u.Data)
+	return Request("v1/template/send", u.EndPoint, u.Key, u.Secret, u.Data)
 }
 
 // ToUser 用户id
